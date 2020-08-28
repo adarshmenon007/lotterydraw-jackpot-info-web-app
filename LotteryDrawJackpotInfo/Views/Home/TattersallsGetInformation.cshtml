@@ -1,0 +1,51 @@
+﻿@model IEnumerable<LotteryDrawJackpotInfo.Models.DrawsResponseItem>
+
+@{
+    ViewBag.Title = "TattersallsGetInformation";
+}
+
+<h2>Tattersalls Open Draws Information</h2>
+
+<table class="table table-striped">
+    <thead class="table-bordered ">
+        <tr>
+            <th colspan=10>
+                @Html.DisplayNameFor(model => model.DrawDisplayName)
+            </th>
+            <th colspan=10>
+                @Html.DisplayNameFor(model => model.DrawLogoUrl)
+            </th>
+            <th colspan=10>
+                @Html.DisplayNameFor(model => model.DrawDate)
+            </th>
+            <th colspan=10>
+                @Html.DisplayNameFor(model => model.DrawNumber)
+            </th>
+            <th colspan=10>
+                @Html.DisplayNameFor(model => model.Div1Amount)
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.OrderBy(x => x.DrawDate))
+    {
+        <tr>
+            <td colspan=10>
+                @Html.DisplayFor(modelItem => item.DrawDisplayName)
+            </td>
+            <td colspan=10>
+                <img src="@Url.Content(item.DrawLogoUrl)" alt="Logo" />
+            </td>
+            <td colspan=10>
+                @Html.DisplayFor(modelItem => item.DrawDate)
+            </td>
+            <td colspan=10>
+                @Html.DisplayFor(modelItem => item.DrawNumber)
+            </td>
+            <td colspan=10>
+                @Html.DisplayFor(modelItem => item.Div1Amount)
+            </td>
+        </tr>
+    }
+
+</table>
