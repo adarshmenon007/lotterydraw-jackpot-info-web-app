@@ -13,6 +13,8 @@ namespace LotteryDrawJackpotInfo.Controllers
     {
         public ActionResult Index()
         {
+            ApiHelper.InitializeClient();
+
             return View();
         }
 
@@ -25,8 +27,6 @@ namespace LotteryDrawJackpotInfo.Controllers
 
         public async Task<ActionResult> TattersallsGetInformation()
         {
-            ApiHelper.InitializeClient();
-
             DrawsRequestItem requestContent = new DrawsRequestItem();
             requestContent.CompanyId = Common.LotteriesCompany.Tattersalls;
             requestContent.MaxDrawCount = 30;
@@ -46,8 +46,6 @@ namespace LotteryDrawJackpotInfo.Controllers
 
         public async Task<ActionResult> GoldenCasketGetInformation()
         {
-            ApiHelper.InitializeClient();
-
             DrawsRequestItem requestContent = new DrawsRequestItem();
             requestContent.CompanyId = Common.LotteriesCompany.GoldenCasket;
             requestContent.MaxDrawCount = 30;
@@ -67,8 +65,6 @@ namespace LotteryDrawJackpotInfo.Controllers
 
         public async Task<ActionResult> NSWLotteriesGetInformation()
         {
-            ApiHelper.InitializeClient();
-
             DrawsRequestItem requestContent = new DrawsRequestItem();
             requestContent.CompanyId = Common.LotteriesCompany.NSWLotteries;
             requestContent.MaxDrawCount = 30;
@@ -88,8 +84,6 @@ namespace LotteryDrawJackpotInfo.Controllers
 
         public async Task<ActionResult> NTLotteriesGetInformation()
         {
-            ApiHelper.InitializeClient();
-
             DrawsRequestItem requestContent = new DrawsRequestItem();
             requestContent.CompanyId = Common.LotteriesCompany.NTLotteries;
             requestContent.MaxDrawCount = 30;
@@ -109,8 +103,6 @@ namespace LotteryDrawJackpotInfo.Controllers
 
         public async Task<ActionResult> SALotteriesGetInformation()
         {
-            ApiHelper.InitializeClient();
-
             DrawsRequestItem requestContent = new DrawsRequestItem();
             requestContent.CompanyId = Common.LotteriesCompany.SALotteries;
             requestContent.MaxDrawCount = 30;
